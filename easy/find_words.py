@@ -16,20 +16,28 @@ class Solution(object):
             c1 = 0
             c2 = 0
             c3 = 0
+            valid = True
             for letter in word:
                 if letter in self.line1:
                     c1 += 1
+                    if c2 + c3 != 0:
+                        valid = False
+                        break
                 elif letter in self.line2:
                     c2 += 1
+                    if c1 + c3 != 0:
+                        valid = False
+                        break
                 elif letter in self.line3:
                     c3 += 1
-                if c1 * c2  + c2 * c3  + c1 * c3 != 0:
-                    break
-            if c1 * c2  + c2 * c3  + c1 * c3 == 0:
+                    if c2 + c1 != 0:
+                        valid = False
+                        break
+            if valid:
                 result.append(word)
         return result
 
 if __name__ == '__main__':
     sol = Solution()
 
-    print sol.findWords(["Hello", "Alaska", "Dad", "Peace"])   
+    print sol.findWords(["hello", "Alaska", "Dad", "Peace"])   
