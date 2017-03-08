@@ -25,5 +25,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     sol = Solution()
-    #print sol.insertInSortedArray([6,5,3,2,1], 4)
-    print sol.findKthLargest([3,11,2,1,5,6,4], 2) # return 5
+    print sol.findKthLargest([3,11,2,1,5,6,4], 2)
